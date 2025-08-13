@@ -1,5 +1,4 @@
 import express from "express";
-import user from "../models/users.js";
 import checkToken from "../middleware/authMiddleware.js";
 import authController from "../controllers/authController.js";
 

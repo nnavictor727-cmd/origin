@@ -1,4 +1,4 @@
-import user from "../models/users.js";
+import User from "../models/users.js";
 const random = Math.floor(Math.random() * 1000000000000);
 
 const authController = {
@@ -11,12 +11,12 @@ const authController = {
       score: 0,
     };
     res.status(201).json({ message: "successfully registered" });
-    user.insertOne(newUser);
+    User.insertOne(newUser);
   },
   loginController: async (req, res) => {
     const { email, password } = req.body;
 
-    const myUser = user.findOne({ email: email });
+    const myUser = User.findOne({ email: email });
     await myUser
     .then(myUser => {
         if (!myUser) {

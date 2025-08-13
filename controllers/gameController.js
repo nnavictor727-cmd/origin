@@ -1,20 +1,16 @@
-import user from "../models/users.js";
+import User from "../models/users.js";
 
+var gameController = {
+  updateScore: async (req, res) => {
+      var {id ,score} = req.body
+      
+      await User.findOne({_id: Object(id)})
+       .then( user => user.updateOne({score : score }))
+      
+          
 
+    res.status(200).json({message: "received score"})
+  },
+};
 
- export default async function updateScore(id){
-    if(id){}
-    
-       await user.findById(id).then((player)=>{
-            player.updateOne({
-                name: player.name,
-                email: player.email,
-                password: player.password,
-                score: player.score
-            }).catch(err => console.log(err))
-
-    })
-    }
-
-
-
+export default gameController;

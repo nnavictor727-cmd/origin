@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import db from "./config/db.js";
 import authRoute from "./routes/authRoute.js";
 import userRoute from "./routes/userRoute.js";
+import gameRoute from "./routes/gameRoute.js"
 
 var port = 3000;
 var app = express();
@@ -19,6 +20,7 @@ db();
 
 app.use("/auth", authRoute);
 app.use("/user", userRoute);
+app.use("/profile", gameRoute);
 
 
 app.listen(port, () => {
