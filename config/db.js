@@ -5,6 +5,11 @@ const uri = "mongodb://localhost:27017/usersDataBase";
 export default async function connectDb() {
   await mongoose
     .connect(uri)
-    .then(console.log("MongoDB is connected"))
-    .catch((err) => console.log(`MongoDB connection ${err}`));
+    .then( e =>{
+       if (e){
+        console.log("MongoDB is Connected")
+      }
+      }
+    )
+    .catch((err) => console.log(err));
 }
