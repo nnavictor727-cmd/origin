@@ -4,7 +4,7 @@ import gameController from "../controllers/gameController.js";
 const Router = express.Router();
 
 
-Router.post('/updateScore' ,(req , res) => {
+Router.put('/updateScore' ,(req , res) => {
   gameController.updateScore(req , res)
 })
 
